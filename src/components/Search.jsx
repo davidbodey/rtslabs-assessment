@@ -15,9 +15,9 @@ const Search = (props) => {
             const focus = 'story'; // used to modify the focus of the  search
             setHistory([...history, query]); // store value for History page
 
-            // Make query request to Hackernews API
+            // Make query request to Hackernews API (currently query is whole wrapped by "")
             const response = await axios.get(
-                `https://hn.algolia.com/api/v1/search_by_date?query=${query}&tags=${focus}`
+                `https://hn.algolia.com/api/v1/search_by_date?query="${query}"&tags=${focus}`
             );
 
             console.log(response.data);

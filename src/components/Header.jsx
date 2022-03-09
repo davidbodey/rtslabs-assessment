@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div id="navbar" className="navbar-brand">
-                <NavLink className="navbar-item" to="/">
+                <NavLink className="navbar-item" to="/search">
                     Home
                 </NavLink>
 
