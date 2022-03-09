@@ -1,6 +1,8 @@
 ### This repository is created by David Bodey for assessment by RTS Labs.
 #### Technologies used: React, React Router, Axios, and Bulma.
 
+#### Live Demo (running on AWS Amplify): https://dev.d22l51z1i7r5f8.amplifyapp.com
+
 ## Instructions:
 Using the Javascript framework of your choice, build an application that has two pages users can navigate to:
 
