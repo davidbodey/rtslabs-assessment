@@ -1,7 +1,9 @@
 ### This repository is created by David Bodey for assessment by RTS Labs.
 #### Technologies used: React, React Router, Axios, and Bulma.
 
-## Instructions:
+#### Live Demo (running on AWS Amplify): https://dev.d22l51z1i7r5f8.amplifyapp.com
+
+## Original Request:
 Using the Javascript framework of your choice, build an application that has two pages users can navigate to:
 
 * “/search” lets the user search the Hacker News Algolia API and displays a list of results (https://hn.algolia.com/api).
