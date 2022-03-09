@@ -3,22 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Search from "./components/Search";
-import History from "./components/History";
+import { BrowserRouter as Router } from "react-router-dom";
+
+// Necessary for connection to AWS Amplify for hosting React and fullstack capabilities.
 import Amplify from 'aws-amplify'
 import awsconfig from './aws-exports'
-
 Amplify.configure(awsconfig)
+
 
 ReactDOM.render(
       <Router>
           <App />
-          <Routes>
-              <Route path="/" element={<Search />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/history" element={<History />} />
-          </Routes>
       </Router>,
   document.getElementById('root')
 );

@@ -1,20 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import axios from "axios"
 
-const Search = () => {
+const Search = (props) => {
     const [data, setData] = useState({hits:[]});
-    const [history, setHistory] = useState([{query:'', hits:[]}]);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    const input_bar = document.getElementById('input-query') // the searchbar
+    const history = props.app.history;
+    const setHistory = props.app.setHistory;
 
     const getData = async (e) => {
         try {
             e.preventDefault();
             e.stopPropagation();
-            let query = document.getElementById('input-query').value;
+            const query = document.getElementById('input-query').value;
             const focus = 'story'; // used to modify the focus of the  search
+            setHistory([...history, query]); // store value for History page
 
             // Make query request to Hackernews API
             const response = await axios.get(
@@ -24,11 +23,9 @@ const Search = () => {
             console.log(response.data);
             setData(response.data);
             setError(null);
-        } catch (err) {
-            setData(null);
-            setError(err.message);
-        } finally {
-            setLoading(false);
+        } catch (error) {
+            setData({hits:[]}); // initial state
+            setError(error.message);
         }
     }
 
@@ -38,13 +35,13 @@ const Search = () => {
             <div className="container">
                 <div className="field has-addons">
                     <form onSubmit={getData}>
-                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="What are you looking for?" style={{position:'fixed', top:'-1.5px', left:'45vw'}} />
+                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="News" style={{position:'fixed', top:'-1.5px', left:'45vw'}} />
                         <button className="is-primary button is-large" name="search" type="submit" style={{position:"fixed", top:'-1.5px', right:'1px'}}>Search</button>
                     </form>
                 </div>
             </div>
             <br/>
-
+            {/* parse the json from query into sections */}
             {data.hits.map((obj, index)=> {
                 return (
                     <section className="hero" id="text-results">

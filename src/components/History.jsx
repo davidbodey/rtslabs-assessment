@@ -1,9 +1,20 @@
 import React from "react";
 
-const History = () => {
+const History = (props) => {
+    const history = props.app.history;
+
     return (
         <div>
-          History
+            {history.map((item)=> {
+                return (
+                    <section className="hero" id="text-results">
+                        <div className="hero-body">
+                            <p> {item} </p>
+                        </div>
+                        <hr />
+                    </section>
+                )}
+            )}
         </div>
     );
 }
