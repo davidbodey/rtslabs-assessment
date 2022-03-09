@@ -14,7 +14,7 @@ const Search = () => {
             e.preventDefault();
             e.stopPropagation();
             let query = document.getElementById('input-query').value;
-            const focus = 'story'; // used to modify the focus of the search
+            const focus = 'story'; // used to modify the focus of the  search
 
             // Make query request to Hackernews API
             const response = await axios.get(
