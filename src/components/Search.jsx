@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios"
+import axios from "axios";
 
 const Search = (props) => {
     const [data, setData] = useState({hits:[]});
@@ -44,8 +44,8 @@ const Search = (props) => {
             {/* parse the json from query into sections */}
             {data.hits.map((obj, index)=> {
                 return (
-                    <section className="hero" id="text-results">
-                        <div className="hero-body ">
+                    <section className="hero" key={index}>
+                        <div className="hero-body">
                             <p> <a href={obj.url} className="title"> {obj.title + " "} </a> </p>
                             <p className="subtitle"> by {obj.author} @ {obj.created_at} </p>
                         </div>
