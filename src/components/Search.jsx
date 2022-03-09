@@ -18,7 +18,7 @@ const Search = () => {
 
             // Make query request to Hackernews API
             const response = await axios.get(
-                `https://cors-anywhere.herokuapp.com/https://hn.algolia.com/api/v1/search_by_date?query=${query}&tags=${focus}`
+                `https://hn.algolia.com/api/v1/search_by_date?query=${query}&tags=${focus}`
             );
 
             console.log(response.data);
@@ -38,8 +38,8 @@ const Search = () => {
             <div className="container">
                 <div className="field has-addons">
                     <form onSubmit={getData}>
-                        <input className="is-primary input is-small, has-addons-fullwidth" id="input-query" name="search" type="text" placeholder="What are you looking for?" style={{position:'fixed', top:'1vh', left:'30vw'}} />
-                        <button className="is-primary button " name="search" type="submit" style={{position:"fixed", top:'1vh', right:'1px'}}>Search</button>
+                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="What are you looking for?" style={{position:'fixed', top:'-1.5px', left:'45vw'}} />
+                        <button className="is-primary button is-large" name="search" type="submit" style={{position:"fixed", top:'-1.5px', right:'1px'}}>Search</button>
                     </form>
                 </div>
             </div>
