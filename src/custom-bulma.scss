@@ -2,7 +2,7 @@
 // If need, change your variables before importing Bulma
 $body-background-color: 'rgb(37, 37, 37)';
 $button-text-color: white;
-$input-border-color: transparent;
+
 html {
   background-color: rgb(37, 37, 37);
 }
@@ -13,6 +13,26 @@ html {
 
 .button, input {
   z-index: 31;
+}
+
+.card {
+  background-color: rgba(0,0,0,0.15);
+}
+.title, a {
+  color: #8ad8f9 !important
+}
+
+.subtitle {
+  color: white !important;
+}
+
+.navbar-brand a {
+  color: black !important;
+}
+
+.container .card {
+  background-color: rgba(0,0,0,0) !important;
+  color: white !important;
 }
 
 @import '../node_modules/bulma';
