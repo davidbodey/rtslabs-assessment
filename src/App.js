@@ -1,22 +1,19 @@
-import './App.css';
 import Header from "./components/Header";
 import React, {useState} from "react";
 import {Route, Routes} from "react-router-dom";
-import Search from "./components/Search";
-import History from "./components/History";
-
+import TextSearch from "./components/TextSearch";
+import ImageSearch from "./components/ImageSearch";
 
 function App() {
-  const [history, setHistory] = useState([]);
   return (
-          <div>
-            <Header></Header>
-            <Routes>
-              <Route path="/" element={<Search app={{history,setHistory}} />} />
-              <Route path="/search" element={<Search app={{history,setHistory}} />} />
-              <Route path="/history" element={<History app={{history}}/>} />
-            </Routes>
-          </div>
+      <div>
+        <Header></Header>
+        <Routes>
+          <Route path="/" element={<ImageSearch />} />
+          <Route path="/image" element={<ImageSearch />} />
+          <Route path="/news" element={<TextSearch />} />
+        </Routes>
+      </div>
   );
 }
 

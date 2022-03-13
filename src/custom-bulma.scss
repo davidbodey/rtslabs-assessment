@@ -1,0 +1,18 @@
+@charset "utf-8";
+// If need, change your variables before importing Bulma
+$body-background-color: 'rgb(37, 37, 37)';
+$button-text-color: white;
+$input-border-color: transparent;
+html {
+  background-color: rgb(37, 37, 37);
+}
+
+.hero a, p {
+  color: white !important;
+}
+
+.button, input {
+  z-index: 31;
+}
+
+@import '../node_modules/bulma';
