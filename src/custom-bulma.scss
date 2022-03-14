@@ -2,7 +2,7 @@
 // If need, change your variables before importing Bulma
 $body-background-color: 'rgb(37, 37, 37)';
 $button-text-color: white;
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 html {
   position: relative;
   background-color: rgb(37, 37, 37);
@@ -29,6 +29,8 @@ html {
 
 .navbar-brand a {
   color: black !important;
+  position: relative;
+  top:7px;
 }
 
 .container .card {
@@ -37,21 +39,22 @@ html {
 }
 
 .navbar-item {
-  padding-left: 40px !important;
+  padding-left: 20px !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .logo {
-  width: 300px;
+  position: absolute;
   float: right;
+  width: 30vw;
+  top: 28px;
+  right: 5vw;
+  max-width: 300px;
+  min-width: 170px;
 }
 
 input {
   text-align: center;
-}
-
-.navbar-item img {
-  position: fixed;
-  right: 0px;
 }
 
 @import '../node_modules/bulma';

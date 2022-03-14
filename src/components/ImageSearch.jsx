@@ -26,13 +26,13 @@ const ImageSearch = (props) => {
     }
 
     return (
-        <div className={'columns'}>
+        <div className={''}>
             <br/>
-            <div className=" container">
+            <div className="container">
                 <div className="field">
                     <form onSubmit={getData}>
-                        <input className="is-primary input " id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
-                        <button className="is-primary button " name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
+                        <input className="is-primary input" id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
+                        <button className="is-primary button" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
                     </form>
                 </div>
 
