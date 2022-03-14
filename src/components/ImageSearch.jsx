@@ -28,11 +28,11 @@ const ImageSearch = (props) => {
     return (
         <div className={'columns'}>
             <br/>
-            <div className="column container">
+            <div className=" container">
                 <div className="field">
                     <form onSubmit={getData}>
-                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', top:'6px', left:'45vw'}}/>
-                        <button className="is-primary button is-large" name="search" type="submit" style={{position:"fixed", top:'6px', right:'0px'}}>Search</button>
+                        <input className="is-primary input " id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
+                        <button className="is-primary button " name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
                     </form>
                 </div>
 
@@ -41,9 +41,9 @@ const ImageSearch = (props) => {
                     {/* parse the json from query into sections */}
                     {data.value.map((obj, index)=> {
                         return (
-                            <div className="columns" key={'card-content-' + index} style={{  padding: '30px'}} >
+                            <div className="columns" key={'card-content-' + index} style={{padding: '30px'}} >
                                 <div className={'column'}>
-                                    <img src={obj.thumbnailUrl} alt={obj.title} key={'card-img-' + index} style={{height:'20vw'}}/>
+                                    <img src={obj.thumbnailUrl} alt={obj.title} key={'card-img-' + index} style={{width:'100vw'}}/>
                                 </div>
 
                                 <div className={'column'}>

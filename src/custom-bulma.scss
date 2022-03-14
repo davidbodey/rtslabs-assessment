@@ -4,6 +4,7 @@ $body-background-color: 'rgb(37, 37, 37)';
 $button-text-color: white;
 
 html {
+  position: relative;
   background-color: rgb(37, 37, 37);
 }
 
@@ -19,7 +20,7 @@ html {
   background-color: rgba(0,0,0,0.15);
 }
 .title, a {
-  color: #8ad8f9 !important
+  color: #8ad8f9 !important;
 }
 
 .subtitle {
@@ -33,6 +34,24 @@ html {
 .container .card {
   background-color: rgba(0,0,0,0) !important;
   color: white !important;
+}
+
+.navbar-item {
+  padding-left: 40px !important;
+}
+
+.logo {
+  width: 300px;
+  float: right;
+}
+
+input {
+  text-align: center;
+}
+
+.navbar-item img {
+  position: fixed;
+  right: 0px;
 }
 
 @import '../node_modules/bulma';

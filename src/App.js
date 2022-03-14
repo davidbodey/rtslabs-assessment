@@ -10,7 +10,7 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path="/" element={<ImageSearch />} />
-          <Route path="/image" element={<ImageSearch />} />
+          <Route path="/images" element={<ImageSearch />} />
           <Route path="/news" element={<TextSearch />} />
         </Routes>
       </div>
