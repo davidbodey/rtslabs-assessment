@@ -12,13 +12,12 @@ const TextSearch = (props) => {
             e.stopPropagation();
             const query = document.getElementById('input-query').value;
             const focus = 'story'; // used to modify the focus of the  search
+            const url = process.env.REACT_APP_TEXT_API;
 
             // Make query request to Hackernews API (currently query is whole wrapped by "")
-            const response = await axios.get(
-                `https://hn.algolia.com/api/v1/search_by_date?query="${query}"&tags=${focus}`
-            );
+            const response = await axios.get(url + `"${query}"&tags=${focus}`);
 
-            console.log(response.data);
+            // Store response
             setData(response.data);
             setError(null);
         } catch (error) {

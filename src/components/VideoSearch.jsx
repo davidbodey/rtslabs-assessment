@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import '../custom-bulma.scss'; // Bulma
 
-const ImageSearch = (props) => {
+// TODO - Ground up rewrite or proper OOP with ImageSearch
+const VideoSearch = (props) => {
     const [data, setData] = useState({'value':[]});
     const [error, setError] = useState(null);
 
@@ -11,10 +12,11 @@ const ImageSearch = (props) => {
             e.preventDefault();
             e.stopPropagation();
             const key = process.env.REACT_APP_MS1;
-            const url = process.env.REACT_APP_IMAGE_API;
+            const url = process.env.REACT_APP_VIDEO_API;
             const query = document.getElementById('input-query').value;
+            const freshness = '&freshness=Day'; // {Day, Week, Month}
             const headers = {'Ocp-Apim-Subscription-Key' : key}
-            const response = await axios.get(url + query, {headers: headers});
+            const response = await axios.get(url + query + freshness, {headers: headers});
 
             console.log(response);
             setData(response.data);
@@ -31,7 +33,7 @@ const ImageSearch = (props) => {
             <div className="container">
                 <div className="field">
                     <form onSubmit={getData}>
-                        <input className="is-primary input" id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
+                        <input className="is-primary input" id="input-query" name="search" type="text" placeholder="Videos" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
                         <button className="is-primary button" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
                     </form>
                 </div>
@@ -59,4 +61,4 @@ const ImageSearch = (props) => {
     );
 }
 
-export default ImageSearch;
+export default VideoSearch;

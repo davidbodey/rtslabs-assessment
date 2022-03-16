@@ -9,6 +9,10 @@ const Header = () => {
                     Images
                 </NavLink>
 
+                <NavLink className="navbar-item" to="/videos">
+                    Videos
+                </NavLink>
+
                 <NavLink className="navbar-item" to="/news">
                     News
                 </NavLink>
