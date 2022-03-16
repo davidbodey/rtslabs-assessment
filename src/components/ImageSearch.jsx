@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import '../custom-bulma.scss'; // Bulma
+import {v4 as uuidv4} from "uuid"; // Randomized string
 
 const ImageSearch = (props) => {
     const [data, setData] = useState({'value':[]});
@@ -14,39 +15,41 @@ const ImageSearch = (props) => {
             const url = process.env.REACT_APP_IMAGE_API;
             const query = document.getElementById('input-query').value;
             const headers = {'Ocp-Apim-Subscription-Key' : key}
+
+            // Make request
             const response = await axios.get(url + query, {headers: headers});
 
-            console.log(response);
+            // Store Data
             setData(response.data);
             setError(null);
         } catch (error) {
-            setData({value:[]}); // initial state
+            setData({value:[]}); // Initial state
             setError(error.message);
         }
     }
 
     return (
-        <div className={''}>
+        <div>
             <br/>
             <div className="container">
                 <div className="field">
                     <form onSubmit={getData}>
-                        <input className="is-primary input" id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
-                        <button className="is-primary button" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
+                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
+                        <button className="is-primary button is-large" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
                     </form>
                 </div>
 
                 <br/>
-                <div className={'container card'} key={'card'}>
+                <div className={'container card'}>
                     {/* parse the json from query into sections */}
                     {data.value.map((obj, index)=> {
                         return (
-                            <div className="columns" key={'card-content-' + index} style={{padding: '30px'}} >
+                            <div className="columns animate__animated animate__fadeIn" key={uuidv4()} style={{padding: '30px'}} >
                                 <div className={'column'}>
-                                    <img src={obj.thumbnailUrl} alt={obj.title} key={'card-img-' + index} style={{width:'100vw'}}/>
+                                    <img src={obj.thumbnailUrl} alt={obj.title} style={{width:'100vw'}} />
                                 </div>
 
-                                <div className={'column'}>
+                                <div className={'column'} >
                                     <p className={'title'}> <a href={obj.hostPageDisplayUrl}> {obj.name} </a> </p>
                                     <p className={'subtitle'}> {obj.datePublished} </p>
                                 </div>

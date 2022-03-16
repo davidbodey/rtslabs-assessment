@@ -39,7 +39,8 @@ html {
 }
 
 .navbar-item {
-  padding-left: 20px !important;
+  //padding-left: 20px !important;
+  font-size: min(max(13px, 1.5vw), 20px) !important;
   font-family: 'Roboto', sans-serif !important;
 }
 
@@ -49,12 +50,17 @@ html {
   width: 30vw;
   top: 28px;
   right: 5vw;
-  max-width: 300px;
-  min-width: 170px;
+  max-width: 250px;
+  min-width: 150px;
 }
 
 input {
-  text-align: center;
+  text-align: left;
+  font-weight: bold;
+}
+
+.animated-card {
+  animation-direction: alternate;
 }
 
 @import '../node_modules/bulma';
