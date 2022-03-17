@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import '../custom-bulma.scss'; // Bulma
-import {v4 as uuidv4} from "uuid"; // Randomized string
+import {v4 as uuidv4} from "uuid";
 
 // TODO - Ground up rewrite or proper OOP with ImageSearch
 const VideoSearch = (props) => {
