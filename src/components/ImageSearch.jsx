@@ -44,7 +44,7 @@ const ImageSearch = (props) => {
                     {/* parse the json from query into sections */}
                     {data.value.map((obj, index)=> {
                         return (
-                            <div className="columns animate__animated animate__fadeInLeftBig" key={uuidv4()}  >
+                            <div className="columns animate__animated animate__fadeInLeftBig" key={uuidv4()} >
                                 <div className={'column'} >
                                     <img src={obj.thumbnailUrl} alt={obj.title} style={{width:'100vw'}} />
                                 </div>

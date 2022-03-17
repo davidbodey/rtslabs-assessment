@@ -31,7 +31,7 @@ function App({ signOut, user }) {
     return (
         <div>
             <Header></Header>
-            <button className="button is-danger" style={{float: 'right'}}>Sign out</button>
+            <button className="button is-danger" style={{float: 'right'}} onClick={signOut}>Sign out</button>
             <h1 style={{float: 'right', color: 'white', paddingRight: '10px', fontFamily: 'Roboto'}}>Welcome, {user.username}</h1>
 
             <Routes>
