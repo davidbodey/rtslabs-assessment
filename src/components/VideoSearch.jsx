@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import '../custom-bulma.scss'; // Bulma
 import {v4 as uuidv4} from "uuid";
+import { Player } from 'video-react';
 
 // TODO - Ground up rewrite or proper OOP with ImageSearch
 const VideoSearch = (props) => {
@@ -15,10 +16,10 @@ const VideoSearch = (props) => {
             const url = process.env.REACT_APP_VIDEO_API;
             const query = document.getElementById('input-query').value;
             const freshness = '&freshness=Week'; // {Day, Week, Month}
-            const headers = {'Ocp-Apim-Subscription-Key' : key}
-
+            const headers = {'Ocp-Apim-Subscription-Key' : key};
+            const embed = '&embedded=player';
             // Make Request
-            const response = await axios.get(url + query + freshness, {headers: headers});
+            const response = await axios.get(url + query, {headers: headers});
 
             // Set data
             setData(response.data);
@@ -45,14 +46,23 @@ const VideoSearch = (props) => {
                     {/* parse the json from query into sections */}
                     {data.value.map((obj, index)=> {
                         return (
-                            <div className="columns animated-card animate__animated animate__fadeInLeftBig" key={uuidv4()} style={{padding: '30px'}} >
+                            <div className="animated-card animate__animated animate__fadeInLeftBig" key={uuidv4()} style={{padding: '30px'}} >
                                 <div className={'column'}>
                                     <img src={obj.thumbnailUrl} alt={obj.title} style={{width:'100vw'}}/>
+                                    {/*Creator:{obj.creator.name}*/}
+                                    {/*{console.log(obj)}*/}
+                                    <div>{obj.description}</div>
+                                    {/*<Player>*/}
+                                        {/*<iframe src={obj.webSearchUrl}/>*/}
                                     {/*<div dangerouslySetInnerHTML={{__html:obj.embedHtml}}></div>*/}
+                                    {/**/}
+                                {/*{obj.webSearchUrl}*/}
+                                {/*<div dangerouslySetInnerHTML={{__html:obj.embedHtml}} />*/}
+                                {/*    </Player>*/}
                                 </div>
 
                                 <div className={'column'}>
-                                    <p className={'title'}> <a href={obj.hostPageDisplayUrl}> {obj.name} </a> </p>
+                                    <p className={'title'}> <a href={obj.hostPageDisplayUrl} target="_blank"> {obj.name} </a> </p>
                                     <p className={'subtitle'}> {obj.datePublished} </p>
                                 </div>
                             </div>

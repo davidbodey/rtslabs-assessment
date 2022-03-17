@@ -50,7 +50,7 @@ const ImageSearch = (props) => {
                                 </div>
 
                                 <div className={'column'} >
-                                    <p className={'title'}> <a href={obj.hostPageDisplayUrl}> {obj.name} </a> </p>
+                                    <p className={'title'}> <a href={obj.hostPageDisplayUrl} target="_blank"> {obj.name} </a> </p>
                                     <p className={'subtitle'}> {obj.datePublished} </p>
                                 </div>
                                 <br/>

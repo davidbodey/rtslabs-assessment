@@ -44,10 +44,10 @@ const TextSearch = (props) => {
                 return (
                     <section className="container" key={uuidv4()}>
                         <div className="card animate__animated animate__fadeInLeftBig" style={{padding:'20px', backgroundColor:'rgba(0,0,0,0.2)'}}>
-                            <p> <a href={obj.url} className="title"> {obj.title + " "} </a> </p>
+                            <p> <a href={obj.url} className="title" target="_blank"> {obj.title + " "} </a> </p>
                             <p className="subtitle"> by {obj.author} @ {obj.created_at} </p>
                         </div>
-                        <hr />
+                        {/*<hr />*/}
                     </section>
                 )}
             )}
