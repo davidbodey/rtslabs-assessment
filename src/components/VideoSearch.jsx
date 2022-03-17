@@ -14,7 +14,7 @@ const VideoSearch = (props) => {
             const key = process.env.REACT_APP_MS1;
             const url = process.env.REACT_APP_VIDEO_API;
             const query = document.getElementById('input-query').value;
-            const freshness = '&freshness=Day'; // {Day, Week, Month}
+            const freshness = '&freshness=Week'; // {Day, Week, Month}
             const headers = {'Ocp-Apim-Subscription-Key' : key}
 
             // Make Request
@@ -35,8 +35,8 @@ const VideoSearch = (props) => {
             <div className="container">
                 <div className="field">
                     <form onSubmit={getData}>
-                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="Videos" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
-                        <button className="is-primary button is-large" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
+                        <input className="is-primary input is-large animate__animated animate__fadeInRightBig" id="input-query" name="search" type="text" placeholder="Videos" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
+                        <button className="is-primary button is-large animate__animated animate__fadeInRightBig" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
                     </form>
                 </div>
 
@@ -45,7 +45,7 @@ const VideoSearch = (props) => {
                     {/* parse the json from query into sections */}
                     {data.value.map((obj, index)=> {
                         return (
-                            <div className="columns animated-card animate__animated animate__fadeIn" key={uuidv4()} style={{padding: '30px'}} >
+                            <div className="columns animated-card animate__animated animate__fadeInLeftBig" key={uuidv4()} style={{padding: '30px'}} >
                                 <div className={'column'}>
                                     <img src={obj.thumbnailUrl} alt={obj.title} style={{width:'100vw'}}/>
                                     {/*<div dangerouslySetInnerHTML={{__html:obj.embedHtml}}></div>*/}

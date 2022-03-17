@@ -34,18 +34,18 @@ const ImageSearch = (props) => {
             <div className="container">
                 <div className="field">
                     <form onSubmit={getData}>
-                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
-                        <button className="is-primary button is-large" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
+                        <input className="is-primary input is-large animate__animated animate__fadeInRightBig" id="input-query" name="search" type="text" placeholder="Images" style={{position:'fixed', bottom:'6px', right:'0px'}}/>
+                        <button className="is-primary button is-large animate__animated animate__fadeInRightBig" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
                     </form>
                 </div>
 
                 <br/>
-                <div className={'container card'}>
+                <div className={'container card'} >
                     {/* parse the json from query into sections */}
                     {data.value.map((obj, index)=> {
                         return (
-                            <div className="columns animate__animated animate__fadeIn" key={uuidv4()} style={{padding: '30px'}} >
-                                <div className={'column'}>
+                            <div className="columns animate__animated animate__fadeInLeftBig" key={uuidv4()}  >
+                                <div className={'column'} >
                                     <img src={obj.thumbnailUrl} alt={obj.title} style={{width:'100vw'}} />
                                 </div>
 
@@ -53,6 +53,7 @@ const ImageSearch = (props) => {
                                     <p className={'title'}> <a href={obj.hostPageDisplayUrl}> {obj.name} </a> </p>
                                     <p className={'subtitle'}> {obj.datePublished} </p>
                                 </div>
+                                <br/>
                             </div>
                         )}
                     )}

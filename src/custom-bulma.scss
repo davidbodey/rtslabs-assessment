@@ -3,6 +3,7 @@
 $body-background-color: 'rgb(37, 37, 37)';
 $button-text-color: white;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 html {
   position: relative;
   background-color: rgb(37, 37, 37);
@@ -14,11 +15,21 @@ html {
 
 .button, input {
   z-index: 31;
+  max-width: 400px !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
-.card {
-  background-color: rgba(0,0,0,0.15);
+.container .card {
+  background-color: rgb(37, 37, 37);
+  box-shadow: none;
+  color: white !important;
 }
+
+.container {
+  //background-color: rgba(0,0,0,0.7) !important;
+  padding: 20px;
+}
+
 .title, a {
   color: #8ad8f9 !important;
 }
@@ -30,12 +41,7 @@ html {
 .navbar-brand a {
   color: black !important;
   position: relative;
-  top:7px;
-}
-
-.container .card {
-  background-color: rgba(0,0,0,0) !important;
-  color: white !important;
+  top: 7px;
 }
 
 .navbar-item {
@@ -52,15 +58,6 @@ html {
   right: 5vw;
   max-width: 250px;
   min-width: 150px;
-}
-
-input {
-  text-align: left;
-  font-weight: bold;
-}
-
-.animated-card {
-  animation-direction: alternate;
 }
 
 @import '../node_modules/bulma';

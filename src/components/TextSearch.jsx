@@ -33,8 +33,8 @@ const TextSearch = (props) => {
             <div>
                 <div className="field">
                     <form onSubmit={getData}>
-                        <input className="is-primary input is-large" id="input-query" name="search" type="text" placeholder="News" style={{position:'fixed', bottom:'6px', right:'0px'}} />
-                        <button className="is-primary button is-large" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
+                        <input className="is-primary input is-large animate__animated animate__fadeInRightBig" id="input-query" name="search" type="text" placeholder="News" style={{position:'fixed', bottom:'6px', right:'0px'}} />
+                        <button className="is-primary button is-large animate__animated animate__fadeInRightBig" name="search" type="submit" style={{position:"fixed", bottom:'6px', right:'0px'}}>Search</button>
                     </form>
                 </div>
             </div>
@@ -43,7 +43,7 @@ const TextSearch = (props) => {
             {data.hits.map((obj, index)=> {
                 return (
                     <section className="container" key={uuidv4()}>
-                        <div className="card animate__animated animate__fadeIn" style={{padding:'20px'}}>
+                        <div className="card animate__animated animate__fadeInLeftBig" style={{padding:'20px', backgroundColor:'rgba(0,0,0,0.2)'}}>
                             <p> <a href={obj.url} className="title"> {obj.title + " "} </a> </p>
                             <p className="subtitle"> by {obj.author} @ {obj.created_at} </p>
                         </div>
