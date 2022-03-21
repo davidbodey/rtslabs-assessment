@@ -5,8 +5,8 @@ import TextSearch from "./components/TextSearch";
 import ImageSearch from "./components/ImageSearch";
 import VideoSearch from "./components/VideoSearch";
 import { Amplify } from 'aws-amplify';
-import { withAuthenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
+// import { withAuthenticator } from '@aws-amplify/ui-react';
+// import '@aws-amplify/ui-react/styles.css';
 
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
@@ -31,8 +31,8 @@ function App({ signOut, user }) {
     return (
         <div>
             <Header></Header>
-            <button className="button is-danger" style={{float: 'right'}} onClick={signOut}>Sign out</button>
-            <h1 style={{float: 'right', color: 'white', paddingRight: '10px', fontFamily: 'Roboto'}}>Welcome, {user.username}</h1>
+            {/*<button className="button is-danger" style={{float: 'right'}} onClick={signOut}>Sign out</button>*/}
+            {/*<h1 style={{float: 'right', color: 'white', paddingRight: '10px', fontFamily: 'Roboto'}}>Welcome, {user.username}</h1>*/}
 
             <Routes>
                 <Route path="/" element={<VideoSearch />} />
@@ -44,4 +44,5 @@ function App({ signOut, user }) {
     );
 }
 
-export default withAuthenticator(App);
+// export default withAuthenticator(App);
+export default App;
